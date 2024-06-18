@@ -117,7 +117,7 @@ case "$1" in
         case "$2" in
                 'list')
                         echo "Listando Todos os Endpoints - BANCO DE DADOS"
-                        PGPASSWORD=$POSTGRES_PASSWORD psql -h $KAMAILIO_IP_DB -p 5432 -U $POSTGRES_USER -d $DB_NAME -c 'select * from endpoint' |grep -v row
+                        PGPASSWORD=$POSTGRES_PASSWORD psql -h $KAMAILIO_IP_DB -p 5432 -U $POSTGRES_USER -d $DB_NAME -c 'select * from vw_kamailio_users' |grep -v row
                         exit;
                 ;;
                 'add')
